@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="storyDao">
+    <insert id="addNewStory" parameterType="java.util.Map">
+    	INSERT INTO story (STORY_BASE_ID, USER_ID, PARENT_REF, TREE_LEVEL, STORY, REGISTERED)
+    	VALUE (#{storyBaseId}, CAST(#{userId} AS UNSIGNED), CAST(#{parentRef} AS UNSIGNED), CAST(#{treeLevel} AS UNSIGNED), #{story}, CAST(#{registered} AS UNSIGNED))
+    </insert>
+</mapper>

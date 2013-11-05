@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userDao">
+    <select id="getLoginResult" parameterType="java.util.Map" resultType="Integer">
+        SELECT
+            COUNT(USER_ID) 
+        FROM user
+        WHERE ID = #{id}
+        AND PW = #{password}
+    </select>
+    
+    <select id="getUserInfo" parameterType="String" resultType="com.paprika.storybench.vo.UserVo">
+	    SELECT USER_ID userSeqId, ID userId, PW userPassword, AUTHOR_NAME userAuthorName
+			FROM user
+		WHERE ID = #{id}
+	</select>
+    
+    <select id="getDuplUserId" parameterType="java.util.Map" resultType="Integer">
+        SELECT
+            COUNT(USER_ID) 
+        FROM user
+        WHERE ID = #{joinUserId}
+    </select>
+    
+    <select id="getDuplAuthor" parameterType="java.util.Map" resultType="Integer">
+        SELECT
+            COUNT(USER_ID) 
+        FROM user
+        WHERE AUTHOR_NAME = #{joinAuthor}
+    </select>
+    
+    <insert id="addNewUser" parameterType="java.util.Map">
+    	INSERT INTO user (ID, PW, AUTHOR_NAME) 
+    	VALUE (#{id}, #{password}, #{authorname})
+    </insert>
+</mapper>

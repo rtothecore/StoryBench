@@ -7,5 +7,13 @@
     	INSERT INTO story_actors (STORY_BASE_ID, ACTOR_NAME, ACTOR_SEX, ACTOR_AGE, ACTOR_DESC)
     	VALUE (#{storyBaseId}, #{actorName}, CAST(#{actorSex} AS UNSIGNED), CAST(#{actorAge} AS UNSIGNED), #{actorDesc})
     </insert>
+    
+    <select id="getStoryActorsInfo" parameterType="Integer" resultType="com.paprika.storybench.vo.StoryActorsVo">
+	    SELECT STORY_ACTORS_ID storyActorsId, STORY_BASE_ID storyBaseId, ACTOR_NAME actorName, 
+	    	   ACTOR_SEX actorSex, ACTOR_AGE actorAge, ACTOR_DESC actorDesc
+			FROM story_actors
+		WHERE STORY_BASE_ID = #{storyBaseId}
+	</select>
+    
 </mapper>
 

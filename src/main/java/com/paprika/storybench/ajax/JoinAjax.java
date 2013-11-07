@@ -12,9 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.paprika.storybench.mybatis.UserDaoImpl;
 
 @Controller
-public class JoinResponseAjaxData {
+public class JoinAjax {
     
-    private static final Logger logger = LoggerFactory.getLogger(JoinResponseAjaxData.class);
+    private static final Logger logger = LoggerFactory.getLogger(JoinAjax.class);
     
     @Resource(name="userDaoImpl")
     private UserDaoImpl userDaoImpl;

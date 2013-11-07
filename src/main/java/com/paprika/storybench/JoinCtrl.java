@@ -17,7 +17,7 @@ import com.paprika.storybench.mybatis.UserDaoImpl;
 @Controller
 public class JoinCtrl {
     
-private static final Logger logger = LoggerFactory.getLogger(HomeCtrl.class);
+private static final Logger logger = LoggerFactory.getLogger(JoinCtrl.class);
     
     @Resource(name="userDaoImpl")
     private UserDaoImpl userDaoImpl;

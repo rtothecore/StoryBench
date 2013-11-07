@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LogoutCtrl {
 
-	private static final Logger logger = LoggerFactory.getLogger(LoginCtrl.class);
+	private static final Logger logger = LoggerFactory.getLogger(LogoutCtrl.class);
 	
 	@RequestMapping("logout.do")
 	public ModelAndView main(HttpServletRequest request ) {
